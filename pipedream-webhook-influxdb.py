@@ -4,9 +4,9 @@ import influxdb_client
 from influxdb_client.client.write_api import SYNCHRONOUS
 #from influxdb_client import InfluxDBClient, Point, client.write_api
 
-token = "0jf0PHkLoz9zkohTjtLuKnsGdYQlUokuwxCUdkiZKAeV09qq_-JsuWOlIV6aLwDC8Nx_yzQRLj2aVypsUPhMfA=="
-org = "ingrjhernandez@gmail.com"
-url = "https://us-west-2-1.aws.cloud2.influxdata.com"
+token = "YOUR-TOKEN"
+org = "YOUR-ORG-ID"
+url = "YOUR-INFLUXDB-URL"
 
 client = influxdb_client.InfluxDBClient(
     url=url,
@@ -20,7 +20,7 @@ print(steps["trigger"]["event"]["body"]["data"])
 
 write_api = client.write_api(write_options=SYNCHRONOUS)
 
-database="datacake"
+database="YOUR-BUCKET"
 measurement = sensordata['device_name']
 print(measurement)
 
